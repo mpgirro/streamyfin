@@ -1,10 +1,10 @@
 {
   "server_url": {
-    "resolving": "Checking…",
+    "resolving": "Vérification en cours…",
     "resolved": "→ {{url}}",
-    "unreachable": "Server unreachable",
+    "unreachable": "Serveur injoignable",
     "wrong_service": "Reachable, but not the expected server",
-    "invalid_url": "Enter a valid address"
+    "invalid_url": "Saisissez une adresse valide"
   },
   "login": {
     "username_required": "Nom d'utilisateur requis",
@@ -149,6 +149,8 @@
       },
       "appearance": {
         "title": "Apparence",
+        "download_live_activity": "Activité en direct",
+        "download_live_activity_hint": "Afficher la progression du téléchargement sur l'écran de verrouillage et la Dynamic Island.",
         "merge_next_up_continue_watching": "Fusionner « Continuer à regarder » et « À suivre »",
         "merge_next_up_continue_watching_hint": "Regroupe « Continuer à regarder » et « À suivre » dans une seule rangée sur l'accueil.",
         "use_episode_images_next_up": "Utiliser les images d'épisode pour « À suivre » et « Continuer à regarder »",
@@ -224,8 +226,13 @@
         "title": "Lecteur vidéo",
         "exoplayer": "ExoPlayer",
         "mpv": "MPV",
+        "native": "Native (recommended)",
+        "classic": "Classic",
+        "native_note": "Both options use the same MPV engine, this only changes the player controls. The native player uses iOS system controls and opens instantly. Switch back if you run into playback issues.",
         "exoplayer_note": "ExoPlayer ne gère pas le style avancé des sous-titres ASS/SSA ni leur alignement horizontal. Passez à MPV si vous en avez besoin.",
-        "mpv_note": "Sur TV, MPV ne transmet pas encore les métadonnées HDR à l'écran : le contenu HDR10/HDR10+ est donc converti en SDR par tone mapping. Passez à ExoPlayer pour une sortie HDR."
+        "mpv_note": "Sur TV, MPV ne transmet pas encore les métadonnées HDR à l'écran : le contenu HDR10/HDR10+ est donc converti en SDR par tone mapping. Passez à ExoPlayer pour une sortie HDR.",
+        "native_tv": "Native player (experimental)",
+        "native_tv_note": "Use the new fully-native Apple TV player. Turn it off to fall back to the previous player if you run into playback issues."
       },
       "buffer": {
         "title": "Paramètres du tampon",
@@ -251,6 +258,13 @@
         "left_side_brightness_description": "Glisser vers le haut/bas sur le côté gauche pour ajuster la luminosité",
         "right_side_volume": "Contrôle du volume du côté droit",
         "right_side_volume_description": "Glisser vers le haut/bas sur le côté droit pour ajuster le volume",
+        "hold_to_speed": "Hold to change speed",
+        "hold_to_speed_description": "Press and hold the video to play at the speed below until released",
+        "hold_to_speed_rate": "Hold speed",
+        "pinch_to_zoom": "Pinch to zoom",
+        "pinch_to_zoom_description": "Pinch out to fill the screen, pinch in to fit",
+        "double_tap_to_seek": "Double tap to seek",
+        "double_tap_to_seek_description": "Double tap the left or right side of the video to skip backward or forward",
         "hide_volume_slider": "Masquer le curseur de volume",
         "hide_volume_slider_description": "Masquer le curseur de volume dans le lecteur vidéo",
         "hide_brightness_slider": "Masquer le curseur de luminosité",
@@ -262,6 +276,7 @@
         "audio_language": "Langue audio",
         "audio_hint": "Choisissez une langue audio par défaut.",
         "none": "Aucune",
+        "original_language": "Original language",
         "language": "Langue",
         "transcode_mode": {
           "title": "Transcodage audio",
@@ -278,6 +293,7 @@
         "subtitle_language": "Langue des sous-titres",
         "subtitle_mode": "Mode des sous-titres",
         "set_subtitle_track": "Piste de sous-titres de l'élément précédent",
+        "subtitles_on_mute": "Turn on subtitles when muted",
         "subtitle_size": "Taille des sous-titres",
         "none": "Aucune",
         "language": "Langue",
@@ -333,6 +349,7 @@
         "hide_libraries": "Masquer les bibliothèques",
         "select_libraries_you_want_to_hide": "Sélectionnez les bibliothèques que vous souhaitez masquer dans l'onglet Bibliothèque et les sections de la page d'accueil.",
         "disable_haptic_feedback": "Désactiver le retour haptique",
+        "resume_dialog": "Ask to resume or start over",
         "default_quality": "Qualité par défaut",
         "default_playback_speed": "Vitesse de lecture par défaut",
         "auto_play_next_episode": "Lecture automatique de l'épisode suivant",
@@ -499,6 +516,12 @@
       "something_went_wrong": "Quelque chose s'est mal passé",
       "could_not_get_stream_url_from_jellyfin": "Impossible d'obtenir l'URL du flux depuis Jellyfin",
       "eta": "ETA {{eta}}",
+      "live_activity": {
+        "downloading": "Téléchargement en cours",
+        "completed": "Téléchargé",
+        "failed": "Échec du téléchargement",
+        "queued": "Ajouté à la file d'attente"
+      },
       "toasts": {
         "you_are_not_allowed_to_download_files": "Vous n'êtes pas autorisé à télécharger des fichiers.",
         "deleted_all_movies_successfully": "Tous les films ont été supprimés avec succès !",
@@ -547,7 +570,8 @@
     "episodes": "Épisodes",
     "movies": "Films",
     "loading": "Chargement…",
-    "seeAll": "Tout afficher"
+    "seeAll": "Tout afficher",
+    "close": "Close"
   },
   "search": {
     "search": "Rechercher...",
@@ -683,6 +707,17 @@
     "downloaded_file_cancel": "Annuler",
     "swipe_down_settings": "Balayez vers le bas pour les paramètres",
     "ends_at": "Se termine à {{time}}",
+    "zoom_to_fill": "Zoom to fill",
+    "subtitle_sync": "Subtitle sync",
+    "audio_sync": "Audio sync",
+    "volume_boost": "Volume boost",
+    "dialogue_boost": "Dialogue boost",
+    "mono_audio": "Mono audio",
+    "rotate": "Rotate",
+    "lock_controls": "Lock controls",
+    "unlock": "Unlock",
+    "sleep_timer": "Sleep timer",
+    "sleep_timer_off": "Turn off",
     "search_subtitles": "Rechercher des sous-titres",
     "subtitle_tracks": "Pistes",
     "subtitle_search": "Rechercher et télécharger",
@@ -694,6 +729,7 @@
     "search_failed": "Recherche échouée",
     "no_subtitle_provider": "Aucun fournisseur de sous-titres configuré sur le serveur",
     "no_subtitles_found": "Aucun sous-titre trouvé",
+    "subtitle_apply_failed": "The subtitle was downloaded but couldn't be applied",
     "add_opensubtitles_key_hint": "Ajoutez une clé API OpenSubtitles dans les paramètres pour une solution de secours côté client",
     "settings": "Paramètres",
     "skip_intro": "Passer l'intro",
